@@ -1,0 +1,19 @@
+---
+- name: Add elastic's public signing key
+  apt_key:
+    url: 'https://packages.elastic.co/GPG-KEY-elasticsearch'
+    state: present
+
+- name: Add elasticsearch 2.0 repository
+  apt_repository:
+    repo: 'deb http://packages.elastic.co/elasticsearch/2.x/debian stable main'
+    state: present
+
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install elasticsearch 2.0
+  apt:
+    package: elasticsearch
+    state: present
