@@ -8,9 +8,6 @@
   apt_repository:
     repo: 'deb http://packages.elastic.co/elasticsearch/2.x/debian stable main'
     state: present
-
-- name: Update apt cache
-  apt:
     update_cache: yes
 
 - name: Install elasticsearch 2.0
