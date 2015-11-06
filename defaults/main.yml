@@ -1,2 +1,3 @@
 ---
-elasticsearch_network_host: 127.0.0.1
+# Ethernet interface to listen on. Defaults to loopback. Examples: lo, eth0, eth1
+elasticsearch_listen_interface: 'lo'

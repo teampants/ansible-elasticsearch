@@ -1,3 +1,2 @@
 ---
-
-network.host: {{ elasticsearch_network_host }}
+network.host: {{ hostvars[inventory_hostname]['ansible_' + elasticsearch_listen_interface].ipv4.address }}
