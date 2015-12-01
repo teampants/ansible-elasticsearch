@@ -15,3 +15,12 @@
     group: elasticsearch
     mode: 0640
   notify: restart elasticsearch
+
+- name: Configure elasticsearch logging
+  copy:
+    src: logging.yml
+    dest: /etc/elasticsearch/logging.yml
+    owner: root
+    group: elasticsearch
+    mode: 0750
+  notify: restart elasticsearch
