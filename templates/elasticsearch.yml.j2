@@ -1,2 +1,7 @@
 ---
+# {{ ansible_managed }}
+cluster.name: {{ elasticsearch_cluster_name }}
 network.host: {{ elasticsearch_network_host }}
+{% if elasticsearch_path_data is defined %}
+path.data: {{ elasticsearch_path_data }}
+{% endif %}

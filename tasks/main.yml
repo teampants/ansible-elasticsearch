@@ -15,3 +15,13 @@
     group: elasticsearch
     mode: 0640
   notify: restart elasticsearch
+
+- name: Create data directory if needed
+  file:
+    path: "{{ elasticsearch_path_data }}"
+    state: directory
+    owner: elasticsearch
+    group: elasticsearch
+    mode: 0755
+  when: elasticsearch_path_data is defined
+  notify: restart elasticsearch
