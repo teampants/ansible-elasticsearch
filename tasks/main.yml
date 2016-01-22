@@ -1,0 +1,27 @@
+---
+- include: debian.yml
+  when: ansible_os_family == 'Debian'
+
+- name: Enable elasticsearch at boot
+  service:
+    name: elasticsearch
+    enabled: yes
+
+- name: Configure elasticsearch
+  template:
+    src: "elasticsearch.yml.j2"
+    dest: "/etc/elasticsearch/elasticsearch.yml"
+    owner: elasticsearch
+    group: elasticsearch
+    mode: 0640
+  notify: restart elasticsearch
+
+- name: Create data directory if needed
+  file:
+    path: "{{ elasticsearch_path_data }}"
+    state: directory
+    owner: elasticsearch
+    group: elasticsearch
+    mode: 0755
+  when: elasticsearch_path_data is defined
+  notify: restart elasticsearch

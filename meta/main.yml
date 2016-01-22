@@ -1,0 +1,11 @@
+---
+galaxy_info:
+  author: Eric Cassady (github@noteric.com)
+  description: Elasticsearch 2.0
+  license: Apache 2.0
+  min_ansible_version: 1.9.1
+
+dependencies:
+  - role: smola.java
+    java_packages: [ "oracle-java7-installer" ]
+

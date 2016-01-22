@@ -1,0 +1,4 @@
+---
+elasticsearch_cluster_name: "Default Elasticsearch Cluster"
+# network.host setting. See https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-network.html
+elasticsearch_network_host: 0.0.0.0
