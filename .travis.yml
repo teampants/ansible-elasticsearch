@@ -1,7 +1,7 @@
 ---
 sudo: required
 dist: trusty
-language: generic
+language: java
 
 before_install:
   - sudo apt-get update -qq
@@ -21,7 +21,7 @@ script:
   - "ansible-playbook -i test/inventory test/test.yml --syntax-check"
 
   # initial run
-  - "ansible-playbook -i test/inventory test/test.yml --connection=local --sudo"
+  - "sudo ansible-playbook -i test/inventory test/test.yml --connection=local --sudo"
 
 
   # check idempotence
