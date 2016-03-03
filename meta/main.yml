@@ -6,6 +6,6 @@ galaxy_info:
   min_ansible_version: 1.9.1
 
 dependencies:
-  - role: smola.java
+  - role: dwcramer.java
     java_packages: [ "oracle-java7-installer" ]
 
