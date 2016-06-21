@@ -4,13 +4,13 @@
     url: 'https://packages.elastic.co/GPG-KEY-elasticsearch'
     state: present
 
-- name: Add elasticsearch 2.0 repository
+- name: Add elasticsearch 2.x repository
   apt_repository:
     repo: 'deb http://packages.elastic.co/elasticsearch/2.x/debian stable main'
     state: present
     update_cache: yes
 
-- name: Install elasticsearch 2.0
+- name: Install elasticsearch 2.x
   apt:
     package: elasticsearch
     state: present
