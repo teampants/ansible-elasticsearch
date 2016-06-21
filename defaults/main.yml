@@ -1,4 +1,5 @@
 ---
-elasticsearch_cluster_name: "Default Elasticsearch Cluster"
+elasticsearch_cluster_name: "{{ inventory_hostname }}-default-elasticsearch-cluster"
+elasticsearch_node_name: "{{ inventory_hostname }}-elasticsearch-node"
 # network.host setting. See https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-network.html
 elasticsearch_network_host: 0.0.0.0
