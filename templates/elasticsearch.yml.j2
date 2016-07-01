@@ -6,6 +6,7 @@ network.host: {{ elasticsearch_network_host }}
 node.data: {{ elasticsearch_node_data | lower }}
 node.master: {{ elasticsearch_node_master | lower }}
 node.name: {{ elasticsearch_node_name }}
+node.max_local_storage_nodes: {{ elasticsearch_node_max_local_storage_nodes }}
 {% if elasticsearch_path_data is defined %}
 path.data: {{ elasticsearch_path_data }}
 {% endif %}
