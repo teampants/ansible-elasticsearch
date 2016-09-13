@@ -2,6 +2,7 @@
 # {{ ansible_managed }}
 cluster.name: {{ elasticsearch_cluster_name }}
 discovery.zen.ping.unicast.hosts: [ {% for host in elasticsearch_discovery_zen_ping_unicast_hosts %}"{{ host }}"{% if not loop.last %},{% endif %}{% endfor %} ]
+discovery.zen.minimum_master_nodes: {{ elasticsearch_discovery_zen_minimum_master_nodes }}
 network.host: {{ elasticsearch_network_host }}
 node.data: {{ elasticsearch_node_data | lower }}
 node.master: {{ elasticsearch_node_master | lower }}
