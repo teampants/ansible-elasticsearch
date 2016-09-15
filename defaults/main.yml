@@ -1,4 +1,10 @@
 ---
-elasticsearch_cluster_name: "Default Elasticsearch Cluster"
+elasticsearch_cluster_name: "{{ inventory_hostname }}-default-elasticsearch-cluster"
+elasticsearch_discovery_zen_ping_unicast_hosts: [ '127.0.0.1' ]
+elasticsearch_discovery_zen_minimum_master_nodes: "{{ ((( elasticsearch_discovery_zen_ping_unicast_hosts | length) / 2) | round(0, 'floor') | int) + 1 }}"
+elasticsearch_node_data: true
+elasticsearch_node_master: true
+elasticsearch_node_name: "{{ inventory_hostname }}-elasticsearch-node"
+elasticsearch_node_max_local_storage_nodes: 1
 # network.host setting. See https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-network.html
 elasticsearch_network_host: 0.0.0.0
