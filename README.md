@@ -8,3 +8,4 @@ Installs elasticsearch 2.0
     - hosts: logging
       roles:
         - role: teampants.elasticsearch
+          elasticsearch_version: 2.4.0
